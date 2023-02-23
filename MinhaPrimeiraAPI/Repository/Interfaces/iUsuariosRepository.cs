@@ -2,7 +2,7 @@
 
 namespace MinhaPrimeiraAPI.Repository.Interfaces
 {
-    public interface iUsuariosRepository
+    public interface IUsuariosRepository
     {
         Task<List<UsuarioModel>> BuscarUsuarios();
         Task<UsuarioModel> BuscarUsuarioId(int id);

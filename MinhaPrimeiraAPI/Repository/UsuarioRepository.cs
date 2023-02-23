@@ -5,7 +5,7 @@ using MinhaPrimeiraAPI.Repository.Interfaces;
 
 namespace MinhaPrimeiraAPI.Repository
 {
-    public class UsuarioRepository : iUsuariosRepository
+    public class UsuarioRepository : IUsuariosRepository
     {
         private readonly SistemadeCadastroDBContext _sistemadeCadastroDBContext;
         public UsuarioRepository(SistemadeCadastroDBContext sistemadeCadastroDBContext)

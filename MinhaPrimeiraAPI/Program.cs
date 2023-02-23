@@ -1,3 +1,8 @@
+using Microsoft.EntityFrameworkCore;
+using MinhaPrimeiraAPI.Data;
+using MinhaPrimeiraAPI.Repository;
+using MinhaPrimeiraAPI.Repository.Interfaces;
+
 namespace MinhaPrimeiraAPI
 {
     public class Program
@@ -12,6 +17,11 @@ namespace MinhaPrimeiraAPI
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddEntityFrameworkSqlServer().AddDbContext<SistemadeCadastroDBContext>(
+                    options => options.UseSqlServer(builder.Configuration.GetConnectionString("DataBase"))
+                );
+
+            builder.Services.AddScoped<IUsuariosRepository, UsuarioRepository>();
 
             var app = builder.Build();
 
