@@ -43,5 +43,12 @@ namespace MinhaPrimeiraAPI.Controllers
             UsuarioModel usuario = await _usuariosRepository.AttUsuario(usuarioModel, id);
             return Ok(usuario);
         }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<UsuarioModel>> DelUsuario(int id)
+        {
+            bool apagado = await _usuariosRepository.DelUsuario(id);
+            return Ok(apagado);
+        }
     }
 }

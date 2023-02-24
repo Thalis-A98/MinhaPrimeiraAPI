@@ -6,7 +6,7 @@ namespace MinhaPrimeiraAPI.Data
 {
     public class SistemadeCadastroDBContext : DbContext
     {
-        public SistemadeCadastroDBContext(DbContextOptions<SistemadeCadastroDBContext> options):base(options)
+        public SistemadeCadastroDBContext(DbContextOptions<SistemadeCadastroDBContext> options) : base(options)
         {
         }
 
